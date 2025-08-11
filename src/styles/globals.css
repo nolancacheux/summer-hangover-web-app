@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s infinite;
+}
+
+body {
+  --gmpx-color-surface: rgb(
+    var(--color-surface-container) /
+      var(--opacity-surface-container, var(--tw-bg-opacity))
+  );
+  --gmpx-color-on-surface: rgb(
+    var(--color-on-surface-container) /
+      var(--opacity-on-surface-container, var(--tw-text-opacity))
+  );
+  --gmpx-color-on-surface-variant: rgb(
+    var(--color-on-surface-variant) /
+      var(--opacity-on-surface-variant, var(--tw-text-opacity))
+  );
+  --gmpx-color-primary: rgb(
+    var(--color-primary) / var(--opacity-primary, var(--tw-text-opacity))
+  );
+  --gmpx-color-outline: rgb(
+    var(--color-outline) / var(--opacity-outline, var(--tw-text-opacity))
+  );
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
+a,
+form {
+  @apply relative z-20;
+}
